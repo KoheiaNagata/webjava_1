@@ -1,0 +1,39 @@
+
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>shopping</title>
+</head>
+<body>
+<form action="#" th:action="@{/koh}" th:object="${orderForm}" method="post">
+	<table class="tbtest" rules="all">
+		<tr>
+			<th>チェック</th>
+			<th>商品名</th>
+			<th>価格</th>
+			<th>個数</th>
+		</tr>
+		<tr th:each="form : ${forms}">
+  			<td>
+  				<input type="checkbox" name="check" value="1">
+  			</td>
+			<td class="tdtest">
+				<a th:text="${form.name}" value="${form.name}" ></a>
+  			</td>
+			<td class="tdtest">
+				<a th:text="${form.price}" value="$fomr.price" ></a>
+			</td>
+			<td>
+  				<input type="text" name="num" size="2">
+  			</td>
+		</tr>
+  		<tr></tr>
+	</table>
+	<br>
+	<input type="submit" value="カートに入れる">
+</form>
+
+
+</body>
+</html>
